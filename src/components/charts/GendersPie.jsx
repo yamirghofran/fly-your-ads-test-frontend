@@ -17,12 +17,6 @@ const dataFormatter = (number) =>
   `${Intl.NumberFormat('us', { maximumFractionDigits: 0 }).format(number).toString()}`;
 
 export default function GendersPie() {
-  const { data: adData, isLoading: isLoadingAdData } = useQuery('ads', fetchAds);
-  const ads = adData&&adData || [];
-  console.log(ads)
-  if (isLoadingAdData) {
-    return <div>Loading...</div>;
-  }
   return (
     <>
     <div className="mx-auto space-y-12">

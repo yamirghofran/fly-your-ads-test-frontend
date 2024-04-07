@@ -6,12 +6,6 @@ import { CirclePlus } from "lucide-react";
 import { useQuery } from "react-query";
 import { fetchCreatives } from "@/util/fetchers";
 function Creatives() {
-  const { data: creativesData, isLoading: isLoadingCreatives } = useQuery('creatives', fetchCreatives);
-  const creatives = creativesData&&creativesData || [];
-  console.log(creatives)
-  if (isLoadingCreatives) {
-    return <div>Loading...</div>;
-  }
   return (
     <>
     <Helmet>
@@ -28,9 +22,9 @@ function Creatives() {
       </Link>
       </div>
       <section className="flex flex-col gap-4 items-center justify-center mt-12">
-        {creatives.map((creative) => (
-          <CreativeItem key={creative._id} title={creative.title} description={creative.description} assets={creative.assets} />
-        ))}
+        <CreativeItem />
+        <CreativeItem />
+        <CreativeItem />
       </section>
     </div>
     </>

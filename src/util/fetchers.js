@@ -2,6 +2,8 @@ import axios from 'axios';
 
 const BASE_URL = 'http://localhost:3000'; // Your server's base URL
 
+//Functions to fetch data from the server.
+
 // Fetch users
 export const fetchUsers = async () => {
   const { data } = await axios.get(`${BASE_URL}/users`);

@@ -24,15 +24,12 @@ import { addNewAdvertisement } from "@/util/functions";
 
 
 function AddAdvertisement() {
-  const { data: creatives, isLoading: isLoadingCreatives } = useQuery('creatives', fetchCreatives);
   const [startDate, setStartDate] = useState(new Date());
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
   const [creative, setCreative] = useState("");
   const [timePeriod, setTimePeriod] = useState("");
-
-  if (isLoadingCreatives) return <div>Loading creatives...</div>;
   
   return (
     <>
@@ -62,9 +59,9 @@ function AddAdvertisement() {
                   <SelectContent>
                     <SelectGroup>
                       <SelectLabel>Creatives</SelectLabel>
-                      {creatives.map((creative) => (
-                        <SelectItem value={creative._id}>{creative.title}</SelectItem>
-                      ))}
+                      <SelectItem value="creative1">Creative 1</SelectItem>
+                      <SelectItem value="creative2">Creative 2</SelectItem>
+                      <SelectItem value="creative3">Creative 3</SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>

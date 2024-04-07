@@ -20,6 +20,7 @@ const uploadFiles = async (files) => {
   }
 };
 
+//Query to the server to create a new ad.
 const addNewAdvertisement = async (title, creatives, startDate, timePeriod, location, description) => {
     const advertisement = {title, creatives, startDate, timePeriod, location, description, status: 'ordered', metrics: []};
   try {
